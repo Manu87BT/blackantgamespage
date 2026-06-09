@@ -1,0 +1,800 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* TOP HEADER NAVBAR */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.studio-logo {
+    height: 35px;
+    width: auto;
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.5px;
+    color: #000;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.main-nav a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #000;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px; /* Margins spacing layout structure gap */
+    align-items: center;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+/* Specific SVG Icon Resizing and Palette Adaptability Hooks */
+.social-links svg {
+    width: 20px;
+    height: 20px;
+    fill: #888888; /* Matches your studio's clean slate grey interface style */
+    transition: fill 0.2s ease;
+}
+
+/* Hover transitions shift vector geometry seamlessly to pure charcoal black */
+.social-links a:hover svg {
+    fill: #000000;
+}
+
+.social-links a:hover {
+    transform: translateY(-1px); /* Adds a premium subtle lift effect on hover */
+}
+
+/* HERO SECTION */
+.hero-section {
+    padding: 160px 5% 100px 5%;
+    background: radial-gradient(circle at 90% 10%, #f3f4f6 0%, #ffffff 60%);
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.hero-inner {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.hero-section p {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* INDIVIDUAL GAME SECTIONS WITCH TRANSPARENT PROMO BACKGROUNDS */
+.game-entry-section {
+    position: relative;
+    width: 100%;
+    /* CHANGED: Boosted padding to give content massive breathing room inside */
+    padding: 100px 0; 
+    /* NEW: Added a deep margin below each game section so they don't touch */
+    margin-bottom: 120px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* NEW: Smooth clip rounding so the background images feel like standalone cards */
+    border-radius: 24px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
+}
+
+.game-entry-section:last-of-type {
+    margin-bottom: 40px;
+}
+
+.game-entry-section:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Semi-transparent absolute canvas background layer */
+.game-section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ENLARGED GRID MEDIA PRESENTATION LAYOUT BLOCK */
+.game-card-grid {
+    position: relative;
+    max-width: 1250px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Left Content Custom Modifications */
+.game-info-side h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+/* GAME TITLE & ICON CONTAINER */
+.game-title-container {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Space between the game icon and title text */
+    margin-bottom: 20px;
+}
+
+.game-title-link {
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.game-title-link:hover {
+    color: #444;
+    text-decoration: underline;
+}
+
+.game-info-side p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: #333;
+    margin-bottom: 35px;
+}
+
+.game-title-icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 12px; /* Smooth rounded squircle profile matching App Store aesthetic */
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft drop shadow to elevate the icon */
+    flex-shrink: 0; /* Prevents the image from squishing if titles are long */
+}
+
+/* Override the default h2 margin since it's handled by the parent container now */
+.game-info-side .game-title-container h2 {
+    margin-bottom: 0; 
+}
+
+/* STORE BADGE CONTAINER */
+.store-buttons-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* HIGH-END STORE BUTTONS */
+.btn-store {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    min-width: 170px;
+}
+
+.btn-store:hover {
+    background-color: #222222;
+    transform: translateY(-2px);
+}
+
+/* SVG Icon Scaling */
+.btn-store svg {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+    flex-shrink: 0;
+}
+
+/* Inside Layout Text Column Wrapper */
+.btn-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+/* Small Upper Label */
+.btn-text-small {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: #aaaaaa;
+}
+
+/* Big Lower Title */
+.btn-text-large {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Right Media Slider Container Layout */
+.game-media-side {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    background: #000;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+.slider-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Make all items stack on top of each other and fade out by default */
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.35s ease-in-out;
+}
+
+/* Smoothly fade in the active asset track item element */
+.slide-item.active {
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.slide-item img, .slide-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slider UI Navigation Arrows - Shifted up slightly to not block native media video controls */
+.slider-arrow {
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 10;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.slider-arrow:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* DETACHED SLIDER DOTS NAVIGATION (Moved below the media) */
+.slider-dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 0 0 0;
+    background: transparent;
+    backdrop-filter: none;
+}
+
+/* INDIVIDUAL DOT LAYER STYLE */
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 30%;
+    background-color: #EEEEEE;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* ACTIVE STATE DOT */
+.slider-dot.active {
+    background-color: #111111;
+    transform: scale(1.25);
+}
+
+.slider-dot:hover {
+    background-color: #AAAAAA;
+}
+
+.arrow-left { left: 15px; }
+.arrow-right { right: 15px; }
+
+/* LOADING/FOOTER STATES */
+.loading-state {
+    text-align: center;
+    padding: 100px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid #eaeaea;
+}
+
+@media (max-width: 900px) {
+    .game-card-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-section h1 { font-size: 2.5rem; }
+}
+
+/* Clicking directly on a video shows standard native browser cursor interaction */
+.slide-item[data-type="video"] video {
+    cursor: default;
+}
+
+/* PORTFOLIO SECTION TITLE SETUP */
+.portfolio-header {
+    width: 100%;
+    max-width: 1250px;
+    margin: 100px auto 30px auto;
+    padding: 0 5%;
+    text-align: center;
+}
+
+.portfolio-header h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #000000;
+    position: relative;
+    display: inline-block;
+}
+
+.portfolio-sub {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888888;
+    margin-bottom: 6px;
+}
+
+
+
+/* ==========================================================================
+   GAME HUB / DETAIL SPECIFIC PAGE STYLES
+   ========================================================================== */
+.game-detail-page {
+    background-color: #ffffff;
+}
+
+.game-hub-container {
+    max-width: 1250px;
+    margin: 140px auto 80px auto;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Upper Two-Column Layout (Media vs Quick Specs) */
+.game-hub-upper-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.game-hub-info-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.game-hub-identity {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-hub-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.game-hub-title-block h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: #000000;
+}
+
+.game-hub-subtitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.game-hub-summary {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444444;
+}
+
+/* Rating Widgets */
+.rating-badge-container {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid #eee;
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+
+.store-rating-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.store-name-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #888888;
+}
+
+.stars-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.star-filled { color: #ffb800; font-size: 1.1rem; }
+.star-half { position: relative; display: inline-block; font-size: 1.1rem; color: #e0e0e0; }
+.star-half::before { content: "★"; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: #ffb800; }
+.rating-number { font-size: 0.9rem; font-weight: 700; color: #1a1a1a; margin-left: 6px; }
+
+.hub-action-panel {
+    border-top: 1px solid #eaeaea;
+    padding-top: 16px;
+}
+
+/* Lower Section Full-Width Re-architecture */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #eaeaea;
+    margin: 20px 0 40px 0;
+}
+
+.details-layout-wrapper {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; /* Broad row space for narration text, compact right sidebar box */
+    gap: 50px;
+    align-items: start;
+}
+
+.details-heading {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    color: #000;
+}
+
+.font-important {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #111111;
+    border-left: 4px solid #000;
+    padding-left: 16px;
+    margin-bottom: 30px;
+}
+
+.hub-features-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.feature-pillar h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.feature-pillar p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #333333;
+}
+
+/* Feature Checklist Sidebar Box */
+.details-sidebar-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.hub-features-list {
+    background: #fbfbfb;
+    border: 1px solid #eee;
+    padding: 24px;
+    border-radius: 14px;
+}
+
+.hub-features-list h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    color: #000;
+}
+
+.hub-features-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hub-features-list li {
+    font-size: 0.95rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.audience-tag {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666;
+    border-top: 1px dashed #ddd;
+    padding-top: 12px;
+}
+
+.closing-cta-card {
+    background: #000000;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.closing-cta-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.closing-cta-card p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+/* Disabled State For Store */
+.btn-store.store-unavailable {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    color: #aaaaaa;
+    cursor: not-allowed;
+    transform: none !important;
+}
+.btn-store.store-unavailable svg { fill: #cccccc; }
+.btn-store.store-unavailable .btn-text-small { color: #bbbbbb; }
+.btn-store.store-unavailable .btn-text-large { color: #999999; }
+
+/* Responsive Scaling Viewport Overrides */
+@media (max-width: 950px) {
+    .game-hub-upper-grid, 
+    .details-layout-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .game-hub-container {
+        margin-top: 110px;
+    }
+}
+
+
+
+/* ==========================================================================
+   DYNAMIC NEWS GRIDS DISPATCH STYLES
+   ========================================================================== */
+.news-container-section {
+    padding: 100px 5% 120px 5%;
+    background-color: #fafafa;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.news-cards-grid {
+    max-width: 1250px;
+    margin: 40px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Dynamically shifts cards perfectly across monitor scales */
+    gap: 30px;
+}
+
+/* Elegant Editorial Article Card Design */
+.news-article-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    padding: 35px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+/* Card Header Components */
+.news-card-metadata {
+    display: flex;
+    flex-wrap: wrap; /* Prevents text crowding on smaller screens */
+    align-items: center;
+    gap: 12px;
+}
+
+.news-card-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.news-card-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #888888;
+}
+
+/* Card Typographic Setup */
+.news-card-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    color: #000000;
+}
+
+.news-card-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444444;
+}
+
+/* Responsive adjustment for small mobile interfaces */
+@media (max-width: 550px) {
+    .news-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .news-article-card {
+        padding: 24px;
+    }
+}

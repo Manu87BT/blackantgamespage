@@ -1,0 +1,23 @@
+[
+  {
+    "id": "gw_aoe",
+    "title": "Galaxy Wars: Attack on Earth",
+    "icon": "games_previews/gw_aoe/GW_AoE_Icon.png",
+    "description": "A First Person Shooter that uses augmented reality to improve immersion and gameplay. Fight for human resistance in this epic battle against alien invaders.",
+    "promoBg": "games_previews/gw_aoe/gw_aoe_promo.png",
+    "pageUrl": "games/galaxy-wars.html",
+    "media": [
+      { "type": "video", "src": "games_previews/gw_aoe/GW_AoE_GamePlayTrailer.mp4" },
+      { "type": "image", "src": "games_previews/gw_aoe/gw_aoe_1.png" },
+      { "type": "image", "src": "games_previews/gw_aoe/gw_aoe_2.png" },
+      { "type": "image", "src": "games_previews/gw_aoe/gw_aoe_3.png" },
+      { "type": "image", "src": "games_previews/gw_aoe/gw_aoe_4.png" },
+      { "type": "image", "src": "games_previews/gw_aoe/gw_aoe_5.png" },
+      { "type": "image", "src": "games_previews/gw_aoe/gw_aoe_6.png" },
+      { "type": "image", "src": "games_previews/gw_aoe/gw_aoe_7.png" },
+      { "type": "image", "src": "games_previews/gw_aoe/gw_aoe_8.png" }      
+    ],
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.blackantgames.galaxywars",
+    "appStoreUrl": ""
+  }
+]
